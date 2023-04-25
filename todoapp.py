@@ -2,7 +2,7 @@ from flask import Flask, redirect, render_template, request
 
 app = Flask(__name__)
 
-todo_list = ['Buy Milk', 'Pay Rent']
+todo_list = []
 
 @app.route('/')
 def show_todo_list():
@@ -16,12 +16,21 @@ def submit():
     todo_item = request.form.get("todo_item")
     if not todo_item:
         return "Invalid Entry"
-    render_template("success.html")
-    # todo_item = request.form['todo_item']
-    # todo_list.append(todo_item)
-    #
-    # return redirect('/')
 
+    todo_item = request.form['todo_item']
+    todo_list.append(todo_item)
+
+    return redirect("/success")
+
+
+@app.route('/success', methods=['GET'])
+def success():
+    return render_template("success.html", todo_list=todo_list)
+
+
+@app.route('/previous', methods=['GET'])
+def previous():
+    return redirect('/')
 
 
 if __name__ == '__main__':

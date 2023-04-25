@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
- Success!
+<h1>Success!</h1>
+
+    <ul>
+        {% for item in todo_list %}
+        <li>{{ item }} </li>
+        {% endfor %}
+    </ul>
+
+<form action="/previous" method="GET">
+<button type="submit" > Add new item </button>
+</form>
+
 </body>
 </html>
