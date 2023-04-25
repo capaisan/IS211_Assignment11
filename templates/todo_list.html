@@ -6,22 +6,25 @@
   <body>
     <h1>To Do List</h1>
     <table>
-      <thead>
-        <tr>
-          <th>Task</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> Hello, {{ name }} </td>
-        </tr>
 
-      </tbody>
+          <form action="/submit" method="post">
+
+            <tr>
+              <th><label for="todo_item">Name</label></th>
+              <th><input type="text" name="todo_item" id="todo_item"></th>
+            </tr>
+
+            <tr>
+              <th><label for="email">Email:</label></th>
+              <th><input type="text" name="name" id="email"></th>
+            </tr>
+
+            <tr>
+              <input type="submit" value="Add To Do Item">
+            </tr>
+          </form>
+
+         </thead>
     </table>
-    <form action="/submit" method="post">
-      <label for="todo_item">New Task:</label>
-      <input type="text" name="todo_item" id="todo_item">
-      <input type="submit" value="Add Task">
-    </form>
   </body>
 </html>

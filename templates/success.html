@@ -7,11 +7,15 @@
 <body>
 <h1>Success!</h1>
 
-    <ul>
-        {% for item in todo_list %}
-        <li>{{ item }} </li>
+     <ul>
+        {% for key, value in todo_list.items() %}
+            {% for item in value %}
+                <li>{{ key }}: {{ item }}</li>
+            {% endfor %}
         {% endfor %}
     </ul>
+
+
 
 <form action="/previous" method="GET">
 <button type="submit" > Add new item </button>
