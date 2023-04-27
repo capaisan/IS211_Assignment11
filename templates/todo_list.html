@@ -1,30 +1,37 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="C:\Users\tdecaro\PycharmProjects\IS211_Assignment11\css\style.css">
     <title>To Do List</title>
   </head>
   <body>
     <h1>To Do List</h1>
     <table>
 
-          <form action="/submit" method="post">
+      <form action="/submit" method="POST">
+        <div>
+          <label for="todo_item">Name:</label>
+          <input type="text" name="todo_item" id="todo_item">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email">
+        </div>
+        <div>
+          <label for="priority">Priority:</label>
 
-            <tr>
-              <th><label for="todo_item">Name</label></th>
-              <th><input type="text" name="todo_item" id="todo_item"></th>
-            </tr>
+          <select name="priority" id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
 
-            <tr>
-              <th><label for="email">Email:</label></th>
-              <th><input type="text" name="name" id="email"></th>
-            </tr>
+        </div>
+        <div>
+          <input type="submit" value="Add To Do Item">
+        </div>
+      </form>
 
-            <tr>
-              <input type="submit" value="Add To Do Item">
-            </tr>
-          </form>
-
-         </thead>
     </table>
   </body>
 </html>

@@ -2,24 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="C:\Users\tdecaro\PycharmProjects\IS211_Assignment11\css\style.css">
     <title>Title</title>
 </head>
 <body>
 <h1>Success!</h1>
 
-     <ul>
-        {% for key, value in todo_list.items() %}
-            {% for item in value %}
-                <li>{{ key }}: {{ item }}</li>
-            {% endfor %}
-        {% endfor %}
+<ul>
+
+  {% for key, value in todo_list.items() %}
+    {% for item in value %}
+      <li>{{ key }}: {{ item }}</li>
+
+    {% endfor %}
+  {% endfor %}
     </ul>
 
 
+<form action="/submit" method="POST">
+  <div>
+    <label for="todo_item">Name:</label>
+    <input type="text" name="todo_item" id="todo_item">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email">
+  </div>
+  <div>
+  <label for="priority">Priority:</label>
 
-<form action="/previous" method="GET">
-<button type="submit" > Add new item </button>
+  <select name="priority" id="priority">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+
+</div>
+  <div>
+    <input type="submit" value="Add To Do Item">
+  </div>
 </form>
+
+<form action="/" method="GET">
+  <div>
+    <input type="submit" value="Go back">
+  </div>
+</form>
+
 
 </body>
 </html>
