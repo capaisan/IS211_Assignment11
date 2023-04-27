@@ -38,5 +38,14 @@ def previous():
     return redirect('/')
 
 
+@app.route('/clear')
+def clear_todo_list():
+    global todo_list
+    todo_list = {"Name": [], "Email": [], "Priority": []}
+    return redirect("/")
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
